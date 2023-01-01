@@ -1,3 +1,3 @@
-# android-kotlin
+# day 1
 
-Kotlin ver
+오늘 - 템플릿을 활용을 위해 폴더 나눔..
