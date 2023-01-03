@@ -64,41 +64,52 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <EditText
-            android:id="@+id/pw_eTxt"
-            android:layout_width="346dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/round"
-            android:hint="비밀번호"
-            android:inputType="textPassword"
-            android:textSize="14dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pw_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/id_eTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/id_eTxt"
+            app:layout_constraintVertical_bias="0.52">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pw_eTxt"
+                android:layout_width="346dp"
+                android:layout_height="48dp"
+                android:background="@drawable/round"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:textSize="14dp"
+                android:visibility="visible" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
             android:layout_width="346dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="104dp"
             android:background="@drawable/btn_round"
             android:text="로그인"
             android:textColor="#C9E9FD"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pw_eTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/id_eTxt" />
 
         <TextView
             android:id="@+id/login_txt_guide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="24dp"
             android:text="로그인 상세 정보를 잊으셨나요?"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.155"
+            app:layout_constraintHorizontal_bias="0.186"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -116,15 +127,14 @@
 
         <ImageView
             android:id="@+id/facebook_login_btn"
-            android:layout_width="367dp"
-            android:layout_height="62dp"
+            android:layout_width="365dp"
+            android:layout_height="48dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/signup_line"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/or_txt"
-            app:layout_constraintVertical_bias="0.065"
+            app:layout_constraintVertical_bias="0.067"
             app:srcCompat="@drawable/ic_facebook_login_btn" />
 
         <View
