@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
+import com.softsquared.template.kotlin.src.main.MainActivity
 import com.softsquared.template.kotlin.src.main.signup.SingUpIdActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
@@ -15,6 +16,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
         binding.signupTxtHelp.setOnClickListener {
             val intent = Intent(this, SingUpIdActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.loginBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
