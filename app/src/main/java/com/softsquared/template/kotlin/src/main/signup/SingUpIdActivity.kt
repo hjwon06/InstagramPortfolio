@@ -2,6 +2,8 @@ package com.softsquared.template.kotlin.src.main.signup
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -16,7 +18,7 @@ import com.softsquared.template.kotlin.src.main.login.LoginActivity
 import java.util.regex.Pattern
 
 class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdBinding::inflate) {
-    val btnBool = false
+    var btnBool = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,15 +41,18 @@ class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdB
                 if(Pattern.matches("^[0-9]*$",binding.idTxt.text) && binding.idTxt.text!!.isNotEmpty()) {
                     binding.errorTxt.text = "사용자 이름에 숫자만 포함할 수는 없습니다."
                     binding.idTxt.setBackgroundResource(R.drawable.error_edtxt_border)
+                    btnBool = false
                 }else if(Pattern.matches("^[ㄱ-힣]*$",binding.idTxt.text)
                     || Pattern.matches("^[0-9-ㄱ-힣]*$",binding.idTxt.text)
                     && binding.idTxt.text!!.isNotEmpty()) {
                     binding.errorTxt.text = "사용자 이름에는 문자,숫자 밑줄 및 마침표만 사용할 수 있습니다."
                     binding.idTxt.setBackgroundResource(R.drawable.error_edtxt_border)
+                    btnBool = false
                 }
                 else {
                     binding.errorTxt.text = null
                     binding.idTxt.setBackgroundResource(R.drawable.round)
+                    btnBool = true
                 }
             }
             // 입력 하기 전
@@ -71,6 +76,7 @@ class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdB
 
 
     }
+
 
 
 

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.HomeStoryItemBinding
 import com.softsquared.template.kotlin.src.main.home.model.HomeStoryItem
 
@@ -18,6 +19,7 @@ class HomeStoryAdapter (var storyList: List<HomeStoryItem>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
         holder.bind(storyList[position])
+
     }
 
     override fun getItemCount(): Int = storyList.size
@@ -26,7 +28,8 @@ class HomeStoryAdapter (var storyList: List<HomeStoryItem>) : RecyclerView.Adapt
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(item: HomeStoryItem) {
-//            binding.homeStoryName.text = item.storyName
+            binding.homeStoryName.text = item.storyName
+            binding.homeStoryIcon.setImageResource(item.storyImg)
         }
     }
 

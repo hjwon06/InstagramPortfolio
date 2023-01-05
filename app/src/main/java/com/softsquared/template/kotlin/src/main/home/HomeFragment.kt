@@ -1,9 +1,7 @@
 package com.softsquared.template.kotlin.src.main.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentHomeBinding
@@ -29,8 +27,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     private fun recyclerviewControl(){
         binding.storyList.apply{
             binding.storyList.adapter = storyAdapter
-            for (i in 0..10) {
-                storyList.add(HomeStoryItem(storyImg = "test", storyName = "riraviolin"))
+            storyList.add(HomeStoryItem(storyImg = R.drawable.ic_my_story_add, storyName = "내 스토리"))
+            for (i in 1..10) {
+                storyList.add(HomeStoryItem(storyImg = R.drawable.ic_home_story_icon, storyName = "riraviolin"))
             }
             setHasFixedSize(true)
         }

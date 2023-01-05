@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class SignUp(
 
-    @SerializedName("userId") val userId: String,
-    @SerializedName("pw") val pw: String
+    @SerializedName("nickName") val userId: String,
+    @SerializedName("password") val pw: String
 )
