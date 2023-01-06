@@ -1,35 +1,36 @@
 package com.softsquared.template.kotlin.src.main.signup
 
-import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.Drawable
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Patterns
+import android.util.Log
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
-import com.google.android.material.textfield.TextInputLayout
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivitySignupIdBinding
 import com.softsquared.template.kotlin.src.main.login.LoginActivity
+import com.softsquared.template.kotlin.src.main.signup.model.data.IdCheckResponse
+import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpResponse
 import java.util.regex.Pattern
 
-class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdBinding::inflate) {
+class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdBinding::inflate),IdCheckInterface {
     var btnBool = false
-
+    private lateinit var mPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mPreferences = getSharedPreferences("id", Context.MODE_PRIVATE)
         binding.backBtn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
         binding.nextBtn.setOnClickListener{
-            val intent = Intent(this, SingUpPwActivity::class.java)
-            startActivity(intent)
+
+            IdCheckService(this).tryGetUsers(binding.idTxt.text.toString())
+
         }
 
 
@@ -42,18 +43,16 @@ class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdB
                     binding.errorTxt.text = "사용자 이름에 숫자만 포함할 수는 없습니다."
                     binding.idTxt.setBackgroundResource(R.drawable.error_edtxt_border)
                     btnBool = false
-                }else if(Pattern.matches("^[ㄱ-힣]*$",binding.idTxt.text)
-                    || Pattern.matches("^[0-9-ㄱ-힣]*$",binding.idTxt.text)
-                    && binding.idTxt.text!!.isNotEmpty()) {
+                }else if(Pattern.matches("^[a-zA-Z0-9]*\$",binding.idTxt.text)) {
+                        binding.errorTxt.text = null
+                        binding.idTxt.setBackgroundResource(R.drawable.round)
+                        btnBool = true
+                }else {
                     binding.errorTxt.text = "사용자 이름에는 문자,숫자 밑줄 및 마침표만 사용할 수 있습니다."
                     binding.idTxt.setBackgroundResource(R.drawable.error_edtxt_border)
                     btnBool = false
                 }
-                else {
-                    binding.errorTxt.text = null
-                    binding.idTxt.setBackgroundResource(R.drawable.round)
-                    btnBool = true
-                }
+
             }
             // 입력 하기 전
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -77,7 +76,25 @@ class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdB
 
     }
 
+    override fun onGetIdCheckSuccess(response: IdCheckResponse) {
+        val intent = Intent(this, SingUpPwActivity::class.java)
+        val editor = mPreferences.edit()
+        Log.d("IdCheck", response.result.toString())
+        if(response.isSuccess == false) {
+            binding.errorTxt.text = response.message
+            binding.idTxt.setBackgroundResource(R.drawable.error_edtxt_border)
+            btnBool = false
+        }else {
+            editor.putString("id",response.result.toString())
+            editor.apply()
+            startActivity(intent)
+        }
 
+    }
+
+    override fun onGetIdCheckFailure(message: String) {
+        Log.d("error","오류 : $message")
+    }
 
 
 }

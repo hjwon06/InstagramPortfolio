@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +68,7 @@
             app:layout_constraintVertical_bias="0.402">
 
             <EditText
-                android:id="@+id/id_eTxt"
+                android:id="@+id/id_Txt"
                 android:layout_width="346dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="48dp"
@@ -94,7 +95,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/pw_eTxt"
+                android:id="@+id/pw_Txt"
                 android:layout_width="346dp"
                 android:layout_height="48dp"
                 android:background="@drawable/round"
@@ -192,7 +193,6 @@
             app:layout_constraintVertical_bias="0.08" />
 
 
-
         <View
             android:id="@+id/signup_line"
             android:layout_width="0dp"
@@ -230,4 +230,5 @@
             app:layout_constraintTop_toBottomOf="@+id/signup_line" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
