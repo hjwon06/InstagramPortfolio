@@ -14,7 +14,7 @@ import retrofit2.http.Path
 interface LoginRetrofitInterface {
 
     //로그인
-    @POST("app/users/login")
+    @POST("app/users/logIn")
     fun postLogin(@Body params: LoginData): Call<LoginResponse>
 
 }

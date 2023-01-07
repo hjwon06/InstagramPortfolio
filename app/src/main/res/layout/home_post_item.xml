@@ -19,8 +19,9 @@
 
         <ImageView
             android:id="@+id/post_writer_icon"
-            android:layout_width="70dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -46,8 +47,8 @@
 
         <ImageView
             android:id="@+id/post_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="230dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -143,6 +144,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="252dp"
+            android:layout_marginTop="350dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -168,7 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="97.6.8.jw님 외 5명이 좋아합니다"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -180,10 +182,9 @@
 
         <TextView
             android:id="@+id/post_contents_writer"
-            android:layout_width="196dp"
-            android:layout_height="46dp"
+            android:layout_width="201dp"
+            android:layout_height="48dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:gravity="center|left"
             android:maxLines="2"
@@ -203,7 +204,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
             android:text="댓글 보기"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
