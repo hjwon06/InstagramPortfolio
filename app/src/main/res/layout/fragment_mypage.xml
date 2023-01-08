@@ -77,11 +77,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/find_view_btn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="40dp"
+                    android:layout_marginEnd="20dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -207,13 +208,14 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button"
-                    android:layout_width="350dp"
+                    android:layout_width="330dp"
                     android:layout_height="40dp"
+                    android:layout_marginStart="13dp"
                     android:text="프로필 편집"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.131"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/mp_name"
                     app:layout_constraintVertical_bias="0.0"
@@ -221,8 +223,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/find_view_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/find_txt"
@@ -252,7 +257,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/find_people_list"
+                    android:id="@+id/mp_find_people_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -315,6 +320,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
                         android:text="좋아하는 스토리를 프로필에 보관해보세요"
                         android:textColor="#000000"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -322,9 +328,10 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.047" />
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mp_stroy_list"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
@@ -337,6 +344,63 @@
                         tools:listitem="@layout/mypage_story_item" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/mp_list_img"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.204"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_mypage_img_action_list" />
+
+                <View
+                    android:id="@+id/mp_list_line"
+                    android:layout_width="205dp"
+                    android:layout_height="5px"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/black_gradient"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mp_list_img"
+                    app:layout_constraintVertical_bias="0.083" />
+
+                <ImageView
+                    android:id="@+id/mp_shared_img"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.704"
+                    app:layout_constraintStart_toEndOf="@+id/mp_list_img"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_mypage_share_list" />
+
+                <View
+                    android:id="@+id/mp_shared_line"
+                    android:layout_width="205dp"
+                    android:layout_height="5px"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/gradient"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.043"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mp_list_line"
+                    app:layout_constraintTop_toBottomOf="@+id/mp_list_img"
+                    app:layout_constraintVertical_bias="0.083" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

@@ -5,11 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.softsquared.template.kotlin.databinding.HomePostItemBinding
-import com.softsquared.template.kotlin.databinding.HomeStoryItemBinding
-import com.softsquared.template.kotlin.src.main.home.model.HomePostItem
-import com.softsquared.template.kotlin.src.main.home.model.HomeStoryItem
+import com.softsquared.template.kotlin.src.main.home.model.HomePostData
 
-class HomePostAdapter (var storyList: List<HomePostItem>) : RecyclerView.Adapter<HomePostAdapter.PostViewHolder>() {
+class HomePostAdapter (var storyList: List<HomePostData>) : RecyclerView.Adapter<HomePostAdapter.PostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding =
@@ -27,7 +25,7 @@ class HomePostAdapter (var storyList: List<HomePostItem>) : RecyclerView.Adapter
     inner class PostViewHolder(private val binding: HomePostItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
-        fun bind(item: HomePostItem) {
+        fun bind(item: HomePostData) {
 //            binding.homeStoryName.text = item.storyName
         }
     }

@@ -12,8 +12,8 @@ import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivitySignupPwBinding
 import com.softsquared.template.kotlin.src.main.login.LoginActivity
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpData
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpResponse
+import com.softsquared.template.kotlin.src.main.signup.model.SignUpData
+import com.softsquared.template.kotlin.src.main.signup.model.SignUpResponse
 
 class SingUpPwActivity : BaseActivity<ActivitySignupPwBinding>(ActivitySignupPwBinding::inflate),SignUpInterface {
     private lateinit var mPreferences: SharedPreferences

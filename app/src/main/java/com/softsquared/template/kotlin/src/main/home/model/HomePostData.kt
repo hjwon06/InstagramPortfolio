@@ -1,6 +1,6 @@
 package com.softsquared.template.kotlin.src.main.home.model
 
-data class HomePostItem(
+data class HomePostData(
     var nickName : String,
     var likeNickName : String,
     var postContents : String,

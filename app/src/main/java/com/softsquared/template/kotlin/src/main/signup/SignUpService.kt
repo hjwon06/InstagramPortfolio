@@ -1,8 +1,8 @@
 package com.softsquared.template.kotlin.src.main.signup
 
 import com.softsquared.template.kotlin.config.ApplicationClass
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpData
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpResponse
+import com.softsquared.template.kotlin.src.main.signup.model.SignUpData
+import com.softsquared.template.kotlin.src.main.signup.model.SignUpResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

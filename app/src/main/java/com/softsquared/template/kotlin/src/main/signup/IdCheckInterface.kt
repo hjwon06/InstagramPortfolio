@@ -1,7 +1,6 @@
 package com.softsquared.template.kotlin.src.main.signup
 
-import com.softsquared.template.kotlin.src.main.signup.model.data.IdCheckResponse
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpResponse
+import com.softsquared.template.kotlin.src.main.signup.model.IdCheckResponse
 
 interface IdCheckInterface {
 

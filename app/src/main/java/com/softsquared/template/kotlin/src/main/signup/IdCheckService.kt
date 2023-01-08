@@ -1,7 +1,7 @@
 package com.softsquared.template.kotlin.src.main.signup
 
 import com.softsquared.template.kotlin.config.ApplicationClass
-import com.softsquared.template.kotlin.src.main.signup.model.data.IdCheckResponse
+import com.softsquared.template.kotlin.src.main.signup.model.IdCheckResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

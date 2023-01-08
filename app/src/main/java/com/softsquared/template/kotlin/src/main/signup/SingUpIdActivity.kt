@@ -12,8 +12,7 @@ import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivitySignupIdBinding
 import com.softsquared.template.kotlin.src.main.login.LoginActivity
-import com.softsquared.template.kotlin.src.main.signup.model.data.IdCheckResponse
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpResponse
+import com.softsquared.template.kotlin.src.main.signup.model.IdCheckResponse
 import java.util.regex.Pattern
 
 class SingUpIdActivity : BaseActivity<ActivitySignupIdBinding>(ActivitySignupIdBinding::inflate),IdCheckInterface {

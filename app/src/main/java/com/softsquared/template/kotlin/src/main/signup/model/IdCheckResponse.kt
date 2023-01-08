@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin.src.main.signup.model.data
+package com.softsquared.template.kotlin.src.main.signup.model
 
 data class IdCheckResponse(
     val code: Int?,

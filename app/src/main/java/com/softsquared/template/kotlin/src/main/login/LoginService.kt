@@ -3,8 +3,6 @@ package com.softsquared.template.kotlin.src.main.login
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.src.main.login.data.LoginData
 import com.softsquared.template.kotlin.src.main.login.data.LoginResponse
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpData
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

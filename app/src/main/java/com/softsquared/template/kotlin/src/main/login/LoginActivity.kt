@@ -7,9 +7,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseActivity
@@ -17,12 +14,8 @@ import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
 import com.softsquared.template.kotlin.src.main.MainActivity
 import com.softsquared.template.kotlin.src.main.login.data.LoginData
 import com.softsquared.template.kotlin.src.main.login.data.LoginResponse
-import com.softsquared.template.kotlin.src.main.signup.SignUpService
 import com.softsquared.template.kotlin.src.main.signup.SingUpIdActivity
-import com.softsquared.template.kotlin.src.main.signup.model.data.SignUpData
-import com.softsquared.template.kotlin.util.LoadingDialog
 import com.softsquared.template.kotlin.util.LoginErrorDialog
-import java.util.regex.Pattern
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate),LoginInterface {
     var idBool = false
@@ -104,6 +97,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         Log.d("test123",response.isSuccess.toString())
         if(!response.isSuccess) {
             val myLoginErrorDialog = LoginErrorDialog(this)
+//            if(response.code == 4000) {
+//                editor.putBoolean("errorState",false)
+//            }else {
+//                editor.putBoolean("errorState",true)
+//            }
             editor.putBoolean("errorState",true)
             editor.apply()
             myLoginErrorDialog.show()

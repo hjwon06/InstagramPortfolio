@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin.src.main.signup.model.data
+package com.softsquared.template.kotlin.src.main.signup.model
 
 import com.google.gson.annotations.SerializedName
 import com.softsquared.template.kotlin.config.BaseResponse
