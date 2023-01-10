@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 import com.softsquared.template.kotlin.config.BaseResponse
 
 data class LoginResponse (
-    @SerializedName("result") val result: LoginData
+    @SerializedName("result") val result: JwtData
 
     ): BaseResponse()

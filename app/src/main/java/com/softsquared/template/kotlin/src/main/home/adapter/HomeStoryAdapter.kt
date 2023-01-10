@@ -30,6 +30,7 @@ class HomeStoryAdapter (var storyList: List<HomeStoryData>) : RecyclerView.Adapt
             binding.homeStoryName.text = item.storyName
             binding.homeStoryIcon.setImageResource(item.storyImg)
         }
+
     }
 
 }

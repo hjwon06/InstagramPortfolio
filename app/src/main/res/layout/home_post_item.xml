@@ -69,27 +69,25 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="0.0">
 
+<!--        <View-->
+<!--            android:id="@+id/post_picture"-->
+<!--            android:layout_width="408dp"-->
+<!--            android:layout_height="310dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:background="@drawable/ic_post_img"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.666"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/sliderViewPager"
-            android:layout_width="414dp"
-            android:layout_height="310dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints" />
-
-        <View
             android:id="@+id/post_picture"
-            android:layout_width="408dp"
-            android:layout_height="310dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/ic_post_img"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sliderViewPager"
+            app:layout_constraintEnd_toEndOf="@+id/sliderViewPager"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -97,14 +95,16 @@
         <LinearLayout
             android:id="@+id/layoutIndicators"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@id/post_picture"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_picture" />
+            app:layout_constraintTop_toBottomOf="@+id/post_picture"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/post_like_btn"

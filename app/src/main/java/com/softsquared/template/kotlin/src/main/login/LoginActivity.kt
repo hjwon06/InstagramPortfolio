@@ -9,6 +9,9 @@ import android.text.TextWatcher
 import android.util.Log
 import androidx.core.content.ContextCompat
 import com.softsquared.template.kotlin.R
+import com.softsquared.template.kotlin.config.ApplicationClass
+import com.softsquared.template.kotlin.config.ApplicationClass.Companion.X_ACCESS_TOKEN
+import com.softsquared.template.kotlin.config.ApplicationClass.Companion.sSharedPreferences
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityLoginBinding
 import com.softsquared.template.kotlin.src.main.MainActivity
@@ -94,7 +97,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
     override fun onPostSignUpSuccess(response: LoginResponse) {
         val editor = mPreferences.edit()
-        Log.d("test123",response.isSuccess.toString())
+        val jwtEditor = sSharedPreferences.edit()
         if(!response.isSuccess) {
             val myLoginErrorDialog = LoginErrorDialog(this)
 //            if(response.code == 4000) {
@@ -107,6 +110,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
             myLoginErrorDialog.show()
         }else {
             val intent = Intent(this, MainActivity::class.java)
+            Log.d("test",response.result.jwt.toString())
+            jwtEditor.putString(X_ACCESS_TOKEN,response.result.jwt)
+            jwtEditor.putInt("userIdx", response.result.userIdx!!)
+            jwtEditor.apply()
             startActivity(intent)
         }
     }
