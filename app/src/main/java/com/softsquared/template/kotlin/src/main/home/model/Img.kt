@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Img(
     @SerializedName("imgIdx")
-    val imgIdx: Int?,
+    val imgIdx: Int,
     @SerializedName("imgUrl")
-    val imgUrl: String?
+    val imgUrl: String
 )

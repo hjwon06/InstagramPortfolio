@@ -1,8 +1,8 @@
 package com.softsquared.template.kotlin.src.main.home
 
+import android.util.Log
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.src.main.home.model.HomeResponse
-import com.softsquared.template.kotlin.src.main.home.model.HomeResponse2
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

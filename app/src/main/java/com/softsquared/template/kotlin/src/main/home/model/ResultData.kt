@@ -21,7 +21,7 @@ data class ResultData(
     @SerializedName("postLikeCount")
     val postLikeCount: Int?,
     @SerializedName("profileImgUrl")
-    val profileImgUrl: Any?,
+    val profileImgUrl: Any? = "test",
     @SerializedName("userIdx")
     val userIdx: Int?
 )
