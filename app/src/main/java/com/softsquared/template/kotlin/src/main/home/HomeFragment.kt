@@ -21,6 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     private val storyAdapter = HomeStoryAdapter(storyList)
 //    private val postAdapter = HomePostAdapter(postList)
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        Log.d("test",ApplicationClass.sSharedPreferences.getInt("userIdx", 0).toString())

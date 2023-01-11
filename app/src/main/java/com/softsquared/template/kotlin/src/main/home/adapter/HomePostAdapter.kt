@@ -5,13 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.softsquared.template.kotlin.R
+import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.databinding.HomePostItemBinding
+import com.softsquared.template.kotlin.src.main.home.HomeLikeInterface
+import com.softsquared.template.kotlin.src.main.home.HomeLikeService
+import com.softsquared.template.kotlin.src.main.home.model.HomeLikeResponse
 import com.softsquared.template.kotlin.src.main.home.model.Img
 import com.softsquared.template.kotlin.src.main.home.model.ResultData
 
-class HomePostAdapter(var postList: List<ResultData>) : RecyclerView.Adapter<HomePostAdapter.PostViewHolder>() {
-
-
+class HomePostAdapter(var postList: List<ResultData>) : RecyclerView.Adapter<HomePostAdapter.PostViewHolder>(), HomeLikeInterface {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding =
             HomePostItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,8 +23,18 @@ class HomePostAdapter(var postList: List<ResultData>) : RecyclerView.Adapter<Hom
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bind(postList[position])
-        Log.d("test","결과1 : " + position)
+        holder.binding.postLikeBtn.setOnClickListener {
+            Log.d("test","test : " + Integer.parseInt(holder.binding.postIdx.text as String))
+            val postIdx = holder.binding.postIdx.text
+            HomeLikeService(this).tryPostLike(ApplicationClass.sSharedPreferences.getInt("userIdx", 0),
+            Integer.parseInt(postIdx as String))
+            if(!ApplicationClass.sSharedPreferences.getBoolean("like", false)) {
+                holder.binding.postLikeBtn.setImageResource(R.drawable.ic_alarm)
+            }else {
+                holder.binding.postLikeBtn.setImageResource(R.drawable.ic_alarm_action)
+            }
 
+        }
     }
 
     override fun getItemCount(): Int = postList.size
@@ -30,7 +43,7 @@ class HomePostAdapter(var postList: List<ResultData>) : RecyclerView.Adapter<Hom
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(item: ResultData) {
-            Log.d("test","결과2: " + postList.size)
+            binding.postIdx.text = item.postIdx.toString()
 //            binding.postWriterIcon.setImageResource(item?.profileImgUrl as Int)
             binding.postWriterName.text = item.nickName
             binding.postContentsWriter.text = item.contents
@@ -46,9 +59,26 @@ class HomePostAdapter(var postList: List<ResultData>) : RecyclerView.Adapter<Hom
                 binding.likeCntTxt.text = "좋아요 0 개"
             }
             binding.postPicture.adapter = HomeImageSliderAdapter(item.imgs as List<Img>)
-
         }
     }
 
+    override fun onPostHomeLikeSuccess(response: HomeLikeResponse) {
+        val editor = ApplicationClass.sSharedPreferences.edit()
+
+        if(response.result == "좋아요") {
+            editor.putBoolean("like",true)
+        }else if((response.result == "좋아요 취소")){
+            editor.putBoolean("like",false)
+        }
+        editor.apply()
+    }
+
+
+
+    override fun onPostHomeLikeFailure(message: String) {
+        Log.d("test", "test : $message")
+    }
+
 }
+
 
