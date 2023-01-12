@@ -1,5 +1,6 @@
 package com.softsquared.template.kotlin.src.main.home.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +32,9 @@ class HomeImageSliderAdapter(var items: List<Img>) : RecyclerView.Adapter<HomeIm
     inner class PostViewHolder(private val binding: HomePostImgSliderBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Img) {
-            Glide.with(itemView).load(item.imgUrl).into(binding.homePostImg)
+            Glide.with(itemView).load(item.imgUrl).
+            error("https://firebasestorage.googleapis.com/v0/b/fir-test-c1c89.appspot.com/o/2.jpg?alt=media&token=ad262090-84bf-4d68-8696-4ee0f80f4d38").
+            into(binding.homePostImg)
         }
     }
 }

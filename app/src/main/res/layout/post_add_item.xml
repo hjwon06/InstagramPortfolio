@@ -7,15 +7,18 @@
     android:layout_marginTop="3dp">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/post_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_post_img" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_post_img"
+        android:alpha="1"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

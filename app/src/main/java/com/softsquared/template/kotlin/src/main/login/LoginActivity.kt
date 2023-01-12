@@ -34,9 +34,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         }
 
 
-
-
-
         //id,pw가 쳐지면 버튼 활성화
         //버튼 색깔 활성
         binding.idTxt.addTextChangedListener(object : TextWatcher {

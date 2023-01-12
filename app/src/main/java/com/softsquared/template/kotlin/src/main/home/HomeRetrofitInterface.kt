@@ -13,7 +13,7 @@ import retrofit2.http.Query
 interface HomeRetrofitInterface {
 
     //게시글 불러오기
-    @GET("posts")
+    @GET("posts/feed")
     fun getPost(@Query("userIdx")userIdx:Int) : Call<HomeResponse>
 
     //좋아요 누르기
