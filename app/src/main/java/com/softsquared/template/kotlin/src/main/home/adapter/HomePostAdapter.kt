@@ -3,7 +3,6 @@ package com.softsquared.template.kotlin.src.main.home.adapter
 import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.softsquared.template.kotlin.R
@@ -17,20 +16,9 @@ import com.softsquared.template.kotlin.src.main.home.model.Img
 import com.softsquared.template.kotlin.src.main.home.model.ResultData
 
 
-class HomePostAdapter(var postList: List<ResultData>, private val clickListner: ClickListner) : RecyclerView.Adapter<HomePostAdapter.PostViewHolder>(), HomeLikeInterface{
+class HomePostAdapter(var postList: List<ResultData>, private val clickListner: ClickListner?) : RecyclerView.Adapter<HomePostAdapter.PostViewHolder>(), HomeLikeInterface{
 
-    //클릭 인터페이스 정의
-    interface ItemClickListener {
-        fun onClick(view: HomePostItemBinding, position: Int)
-    }
 
-    //클릭리스너 선언
-    private lateinit var itemClickListner: ItemClickListener
-
-    //클릭리스너 등록 매소드
-    fun setItemClickListener(itemClickListener: ItemClickListener) {
-        this.itemClickListner = itemClickListener
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding =
@@ -40,7 +28,7 @@ class HomePostAdapter(var postList: List<ResultData>, private val clickListner: 
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bind(postList[position])
-
+        val editor = ApplicationClass.sSharedPreferences.edit()
 
         holder.binding.postLikeBtn.setOnClickListener {
             Log.d("test","test : " + Integer.parseInt(holder.binding.postIdx.text as String))
@@ -55,11 +43,18 @@ class HomePostAdapter(var postList: List<ResultData>, private val clickListner: 
         }
 
         holder.binding.commentSeeBtn.setOnClickListener {
-            val editor = ApplicationClass.sSharedPreferences.edit()
+
             editor.putInt("postIdx", Integer.parseInt(holder.binding.postIdx.text as String))
             editor.apply()
             Log.d("test","test : " + ApplicationClass.sSharedPreferences.getInt("postIdx",0))
-            clickListner.onViewClick(holder.binding,position)
+            clickListner?.onViewClick(holder.binding,position)
+        }
+
+
+        holder.binding.postSetting.setOnClickListener {
+            Log.d("test","test1")
+            editor.putInt("postIdx", Integer.parseInt(holder.binding.postIdx.text as String))
+            clickListner?.onDeleteClick(it,position)
         }
     }
 

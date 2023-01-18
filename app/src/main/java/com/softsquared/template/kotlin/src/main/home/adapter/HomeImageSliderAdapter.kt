@@ -33,6 +33,7 @@ class HomeImageSliderAdapter(var items: List<Img>) : RecyclerView.Adapter<HomeIm
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Img) {
             Glide.with(itemView).load(item.imgUrl).
+            centerCrop().
             error("https://firebasestorage.googleapis.com/v0/b/fir-test-c1c89.appspot.com/o/2.jpg?alt=media&token=ad262090-84bf-4d68-8696-4ee0f80f4d38").
             into(binding.homePostImg)
         }

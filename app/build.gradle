@@ -75,6 +75,7 @@ dependencies {
     //url을 이미지로, 이미지 동그랗게
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 

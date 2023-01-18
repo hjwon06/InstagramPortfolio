@@ -39,11 +39,7 @@ class HomeAddOneAdapter(var homeAddList : List<HomeAddOneData>) : RecyclerView.A
         holder.bind(homeAddList[position])
         holder.itemView.setOnClickListener {
             itemClickListner.onClick(it, position)
-            if(holder.binding.postImg.alpha == 0.7F) {
-                holder.binding.postImg.alpha = 1F
-            }else {
-                holder.binding.postImg.alpha = 0.7F
-            }
+
 
         }
     }

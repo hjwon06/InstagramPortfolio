@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="550dp">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
 
     <TextView
         android:id="@+id/post_idx"
@@ -29,7 +30,7 @@
 
         <ImageView
             android:id="@+id/post_writer_icon"
-            android:layout_width="60dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,6 +45,7 @@
             android:id="@+id/post_writer_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:text="riraviolin"
             android:textAlignment="center"
             android:textColor="#0E0E0E"
@@ -59,41 +61,43 @@
             android:id="@+id/post_setting"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/post_writer_icon"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.476"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_post_setting" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="407dp"
-        android:layout_height="351dp"
+        android:layout_height="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="0.0">
 
-<!--        <View-->
-<!--            android:id="@+id/post_picture"-->
-<!--            android:layout_width="408dp"-->
-<!--            android:layout_height="310dp"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:background="@drawable/ic_post_img"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.666"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.0" />-->
+        <!--        <View-->
+        <!--            android:id="@+id/post_picture"-->
+        <!--            android:layout_width="408dp"-->
+        <!--            android:layout_height="310dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:background="@drawable/ic_post_img"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.666"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="0.0" />-->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/post_picture"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="310dp"
             app:layout_constraintBottom_toBottomOf="@+id/sliderViewPager"
             app:layout_constraintEnd_toEndOf="@+id/sliderViewPager"
             app:layout_constraintHorizontal_bias="0.0"
@@ -117,9 +121,11 @@
 
         <ImageView
             android:id="@+id/post_like_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -128,9 +134,10 @@
 
         <ImageView
             android:id="@+id/post_comment_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/post_like_btn"
             app:layout_constraintTop_toTopOf="parent"
@@ -139,9 +146,10 @@
 
         <ImageView
             android:id="@+id/post_message_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/post_comment_btn"
             app:layout_constraintTop_toTopOf="parent"
@@ -150,23 +158,23 @@
 
         <ImageView
             android:id="@+id/post_collection_save_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="252dp"
-            android:layout_marginTop="350dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="255dp"
+            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/post_message_btn"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.993"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/ic_collection_save" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="141dp"
+        android:layout_width="407dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -178,8 +186,7 @@
             android:id="@+id/like_cnt_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
             android:text="97.6.8.jw님 외 5명이 좋아합니다"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -192,7 +199,7 @@
         <TextView
             android:id="@+id/post_contents_writer"
             android:layout_width="201dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:ellipsize="end"
             android:gravity="center|left"
@@ -214,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="댓글 보기"
-            android:textSize="15dp"
+            android:textSize="13dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

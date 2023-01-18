@@ -30,7 +30,8 @@ class PostAddOneFragment: BaseFragment<FragmentPostAddOneBinding>(FragmentPostAd
         val mainAct = activity as MainActivity
         mainAct.bottomNavigationHide(true)
         val editor = sSharedPreferences.edit()
-
+        Glide.with(binding.root).load("https://firebasestorage.googleapis.com/v0/b/fir-test-c1c89.appspot.com/o/2.jpg?alt=media&token=ad262090-84bf-4d68-8696-4ee0f80f4d38")
+            .into(binding.postAddPic)
         binding.postCloseBtn.setOnClickListener {
             parentFragmentManager.beginTransaction().remove(this).commit()
             mainAct.bottomNavigationHide(false)

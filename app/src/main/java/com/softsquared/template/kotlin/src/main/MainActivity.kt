@@ -35,12 +35,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                             .commitAllowingStateLoss()
                     }
 
-                    R.id.menu_main_btm_nav_reels -> {
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, ContentsFragment())
-                            .commitAllowingStateLoss()
-                    }
-
                     R.id.menu_main_btm_nav_my_page -> {
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.main_frm, MyPageFragment())

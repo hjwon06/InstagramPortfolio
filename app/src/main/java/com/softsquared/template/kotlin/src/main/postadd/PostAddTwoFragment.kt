@@ -29,9 +29,8 @@ class PostAddTwoFragment: BaseFragment<FragmentPostAddTwoBinding>(FragmentPostAd
         }
 
         binding.postAddBtn.setOnClickListener {
-//            PostAddService(this).tryPostAdd(userIdx, HomeAddTwoData(binding.postAddTxt.text.toString(),
-//                listOf(imgUrl) as List<String>
-//            ))
+            PostAddService(this).tryPostAdd(userIdx, HomeAddTwoData(binding.postAddTxt.text.toString(),
+                listOf(imgUrl) as List<String>))
 //            parentFragmentManager.beginTransaction().remove().commit()
             parentFragmentManager.beginTransaction().replace(R.id.main_frm,HomeFragment()).commit()
             mainAct.bottomNavigationHide(false)

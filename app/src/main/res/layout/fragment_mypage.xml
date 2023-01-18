@@ -351,57 +351,60 @@
                 android:layout_height="155dp"
                 android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:id="@+id/mp_list_img"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:showAsAction="always"
+                        android:enabled="true"
+                        android:checkable="true"
+                        android:icon="@drawable/tab_mypage_img_selector"/>
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:showAsAction="always"
+                        android:enabled="true"
+                        android:checkable="true"
+                        android:icon="@drawable/tab_mypage_share_selector" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/post_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.204"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_mypage_img_action_list" />
+                    app:layout_constraintVertical_bias="0.0" />
 
-                <View
-                    android:id="@+id/mp_list_line"
-                    android:layout_width="205dp"
-                    android:layout_height="5px"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/black_gradient"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/mp_list_img"
-                    app:layout_constraintVertical_bias="0.083" />
-
-                <ImageView
-                    android:id="@+id/mp_shared_img"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <LinearLayout
+                    android:id="@+id/layoutIndicators"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@id/post_picture"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.704"
-                    app:layout_constraintStart_toEndOf="@+id/mp_list_img"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_mypage_share_list" />
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_picture"
+                    app:layout_constraintVertical_bias="0.0" />
 
-                <View
-                    android:id="@+id/mp_shared_line"
-                    android:layout_width="205dp"
-                    android:layout_height="5px"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/gradient"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHorizontal_bias="0.043"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/mp_list_line"
-                    app:layout_constraintTop_toBottomOf="@+id/mp_list_img"
-                    app:layout_constraintVertical_bias="0.083" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 
